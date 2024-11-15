@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sayfa Başlığı</title>
+    <meta name="description" content="Açıklama">
+    <meta name="keywords" content="anahtar kelimeler">
+    <link rel="stylesheet" href="style.css">
+    <!-- Sosyal Web Siteleri -->
+    <meta property="og:title" content="Sayfa Başlığı">
+    <meta property="og:description" content="Sayfa Açıklaması">
+    <meta property="og:image" content="www.example.com/image.jpg">
+    <meta property="og:url" content="www.example.com">
+    <!-- Twitter Web Sitesi -->
+     <meta name="twitter:title" >
+     <meta name="twitter:description" >
+     <meta name="twitter:image" >
+     <meta name="twitter:url" >
+</head>
+<body>
+    <h1>İletişim</h1>
+    <form action="" method="post">
+        <h3>text</h3>
+        <input type="text">
+        <h3>Number</h3>
+        <input type="number" placeholder="yaşınız">
+        <h3>Date - Time</h3>
+        <input type="date">
+        <br>
+        <input type="datetime-local">
+        <br>
+        <input type="time">
+        <br>
+        <input type="color">
+        <br>
+        <br>
+        <hr>
+        <br>
+        <input type="file">
+        <br>
+        <br>
+        <hr>
+        <br>
+        <input id="rangeInput" type="range" min="10" max="50" step="10">
+        <p>Range Değeri: <span id="rangespan"></span></p>
+    </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <script>
+        var rangeInput = document.getElementById("rangeInput");
+        var rangespan = document.getElementById("rangespan");
+        rangeInput.addEventListener("input", function(){
+            rangespan.innerHTML = rangeInput.value;
+        });
+    </script>
+</body>
+</html>
