@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: lightgray;
+  height: 100vh;
+  padding: 100px 0;
+}
+
+nav {
+  background-color: lightblue;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  /* position: sticky;
+  top: 0; */
+  position: fixed;
+  height: 100vh;
+  width: 10vw;
+  top: 0;
+}
+ul {
+  background-color: lightcoral;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 10px;
+}
+span {
+  background-color: lightgreen;
+}
+.hero {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 40px 0;
+}
+h1 {
+  background-color: lightskyblue;
+}
+p {
+  background-color: lightgoldenrodyellow;
+}
+.hero-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* position */
+/* static => default */
+/* fixed-sticy */
+/* relative-absolute */
