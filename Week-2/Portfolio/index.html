@@ -13,12 +13,14 @@
 <body>
     <header class="header">
         <a href="#" class="logo">Portfolio</a>
+        <input type="checkbox" id="menu-btn" class="menu-btn">
+        <label for="menu-btn" class="menu-icon"><i class="fa-solid fa-bars"></i></label>
         <nav class="navbar">
             <a href="#home">Home</a>
             <a href="#about">About</a>
-            <a href="#">Services</a>
-            <a href="#">Portfolio</a>
-            <a href="#">Contact</a>
+            <a href="#services">Services</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
     <section class="home" id="home">
@@ -127,5 +129,29 @@
             </div>
         </div>
     </section>
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact <span>Me!</span></h2>
+        <form action="#">
+            <div class="input-div">
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+            </div>
+            <div class="input-div">
+                <input type="number" placeholder="Phone Number">
+                <input type="text" placeholder="Subject">
+            </div>
+            <textarea name="" id="" cols="30" rows="10" placeholder="Enter Your Message"></textarea>
+            <input type="submit" value="Send Mail" class="contact-btn">
+        </form>
+    </section>
+    <footer class="footer">
+        <div class="footer-text">
+            <p>&copy; 2021 Ersin Mutlu. All Rights Reserved.</p>
+        </div>
+        <div class="footer-icon-top">
+            <a href="#home"><i class="fa-solid fa-arrow-up"></i></a>
+        </div>
+    </footer>
 </body>
 </html>
+
