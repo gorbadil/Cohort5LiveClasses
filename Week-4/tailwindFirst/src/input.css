@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hebele {
+  background-color: tomato;
+  width: 300px;
+  height: 200px;
+  margin: 30px;
+}
+
+@layer base {
+  p {
+    @apply text-xl bg-slate-300 p-2 rounded-md;
+  }
+}
