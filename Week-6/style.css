@@ -1,0 +1,44 @@
+body {
+  background-color: lightgray;
+  min-height: 300vh;
+}
+
+.header {
+  position: sticky;
+  background-color: transparent;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+#click {
+  background-color: hotpink;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 50px;
+}
+#mouseOver {
+  background-color: tomato;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 50px;
+}
+
+.left {
+  margin-left: 100px;
+}
+
+.changeBack {
+  background-color: black;
+  color: tomato;
+}
+
+.red {
+  background-color: red;
+}
