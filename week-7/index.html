@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./src/output.css" rel="stylesheet" />
+    <title>BarKing</title>
+  </head>
+  <body>
+    <header id="navbar" class="sticky top-0 transition-all z-10">
+      <nav class="container mx-auto p-6">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center">
+            <img src="./images/logo.svg" alt="" class="w-24" />
+            <p class="text-2xl">Bar<span class="text-brightRed">King</span></p>
+          </div>
+          <div class="gap-6 hidden md:flex">
+            <a href="" class="hover:text-darkGrayishBlue">Pricing</a>
+            <a href="" class="hover:text-darkGrayishBlue">About Us</a>
+            <a href="" class="hover:text-darkGrayishBlue">Careers</a>
+            <a href="" class="hover:text-darkGrayishBlue">Community</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <section id="hero">
+      <div class="container mx-auto flex items-center px-6 mt-10 gap-8">
+        <div class="flex flex-col space-y-12 md:w-1/2">
+          <h1 class="text-5xl font-bold text-left">
+            King for the elite service
+          </h1>
+          <p class="text-darkGrayishBlue text-left">
+            We can't solve your problems, but we can help you to forget them.
+          </p>
+          <div>
+            <a
+              href=""
+              class="p-3 px-6 bg-brightRed rounded-full hover:bg-brightRedLight text-white"
+              >Book a Table</a
+            >
+          </div>
+        </div>
+        <div class="hero-img">
+          <img src="./images/cocktail.jpg" alt="" />
+        </div>
+      </div>
+    </section>
+    <section id="features" class="bg-veryLightGray p-6">
+      <div
+        id="features-buttons"
+        class="container mx-auto grid-cols-4 justify-evenly grid gap-8"
+      >
+        <button
+          id="coctail"
+          class="bg-brightRed px-4 py-2 rounded-lg hover:bg-brightRedLight"
+        >
+          Coctail
+        </button>
+        <button
+          id="service"
+          class="bg-brightRed px-4 py-2 rounded-lg hover:bg-brightRedLight"
+        >
+          Service
+        </button>
+        <button
+          id="car-park"
+          class="bg-brightRed px-4 py-2 rounded-lg hover:bg-brightRedLight"
+        >
+          Car Park
+        </button>
+        <button
+          id="live-actions"
+          class="bg-brightRed px-4 py-2 rounded-lg hover:bg-brightRedLight"
+        >
+          Live Actions
+        </button>
+      </div>
+      <div
+        id="features-container"
+        class="flex flex-wrap container mx-auto gap-10 mt-10 justify-center"
+      >
+        <div class="w-5/12 flex flex-col justify-center align-baseline gap-10">
+          <h2 id="featuresH2" class="text-2xl text-start">Coctail</h2>
+          <p id="featuresP" class="text-start">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga
+            quisquam libero a maiores, voluptate amet iste perferendis! Quisquam
+            explicabo sint, maxime voluptatem corporis dolorum doloremque.
+            Commodi quasi maiores tempore consectetur, in, cupiditate odit eius
+            aut fuga
+          </p>
+        </div>
+        <img
+          id="featuresImg"
+          src="./images/cocktails.jpg"
+          alt=""
+          class="w-96"
+        />
+      </div>
+    </section>
+    <section id="gallery" class="relative">
+      <div class="container mx-auto p-6 flex flex-col">
+        <h2 class="text-2xl mx-auto mb-10">Gallery</h2>
+        <div id="gallery-button" class="flex justify-center px-10">
+          <button id="prev">Prev</button>
+          <img
+            id="galleryImg"
+            src="./images/cocktails.jpg"
+            alt=""
+            class="w-96 mx-auto"
+          />
+          <button id="next">Next</button>
+        </div>
+      </div>
+    </section>
+    <script src="./main.js"></script>
+  </body>
+</html>
