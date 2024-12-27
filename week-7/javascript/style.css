@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: lightgray;
+  min-height: 200vh;
+  min-width: 100vw;
+  overflow-x: hidden;
+}
+
+.blue {
+  color: blue;
+  font-size: 2rem;
+}
+
+.red {
+  color: red;
+}
+
+.btn {
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+  background-color: tomato;
+  width: 300px;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+#eklebtn {
+}
+
+.side {
+  width: 200px;
+  background-color: lime;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: all 0.5s;
+}
+
+.side-right {
+  right: -200px;
+}
+
+.kedi {
+  width: 20px;
+  height: 20px;
+  border-radius: 5rem;
+  background-color: blue;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: transparent;
+  z-index: 10;
+}
+
+/* .navbar-white {
+  background-color: white;
+} */
