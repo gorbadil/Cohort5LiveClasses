@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/output.css" />
+    <title>Vite App</title>
+  </head>
+  <body class="bg-gray-400">
+    <h1 class="text-3xl font-bold underline">Hello world!</h1>
+
+    <div
+      id="get-data"
+      class="bg-slate-200 rounded-lg inline-block px-4 py-2 cursor-pointer"
+    >
+      Get Data
+    </div>
+    <input
+      type="text"
+      id="search"
+      class="rounded-lg px-4 py-2"
+      placeholder="Search User"
+    />
+    <hr />
+    <input type="text" placeholder="name" id="name" />
+    <input type="text" placeholder="lastname" id="lastname" />
+    <input type="text" placeholder="age" id="age" />
+    <button id="postBtn" class="bg-red-200 py-2 px-4 rounded-lg">Submit</button>
+    <hr />
+    <div id="content" class="content"></div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
