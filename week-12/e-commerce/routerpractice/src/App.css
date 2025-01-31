@@ -1,0 +1,46 @@
+* {
+  background-color: grey;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  display: flex;
+}
+
+.left-panel {
+  width: 20%;
+  background-color: aliceblue;
+  min-height: 100vh;
+}
+
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+header * {
+  width: 100%;
+  background-color: hotpink;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+.route * {
+  background-color: tan;
+  width: 100%;
+  padding: 10px;
+  min-height: 100%;
+}
+
+button {
+  padding: 10px 20px;
+  font-weight: bolder;
+  width: 100px;
+  background-color: hotpink;
+  color: white;
+  margin: 10px;
+}
