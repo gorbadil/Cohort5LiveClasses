@@ -7,11 +7,24 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
 function TabooCard() {
-  const { currentCardIndex, setCurrentCardIndex, passCount } = useGame();
+  const {
+    currentCardIndex,
+    passCount,
+    handleCorrect,
+    handleWrong,
+    handlePass,
+  } = useGame();
+
   return (
     <div>
       <Card variant="outlined">
         <CardContent>
+          <img
+            src={tabooCards[currentCardIndex].image}
+            width={"300px"}
+            height={"300px"}
+            alt=""
+          />
           <Typography variant="h5" component="div">
             {tabooCards[currentCardIndex].word}
           </Typography>
@@ -23,13 +36,28 @@ function TabooCard() {
           ))}
         </CardContent>
         <CardActions>
-          <Button variant="contained" color="secondary" size="small">
+          <Button
+            onClick={handleCorrect}
+            variant="contained"
+            color="secondary"
+            size="small"
+          >
             Doğru
           </Button>
-          <Button variant="contained" color="secondary" size="small">
+          <Button
+            onClick={handleWrong}
+            variant="contained"
+            color="secondary"
+            size="small"
+          >
             Yanlış
           </Button>
-          <Button variant="contained" color="secondary" size="small">
+          <Button
+            onClick={handlePass}
+            variant="contained"
+            color="secondary"
+            size="small"
+          >
             Pas - {passCount}{" "}
           </Button>
         </CardActions>

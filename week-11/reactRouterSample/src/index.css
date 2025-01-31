@@ -1,0 +1,12 @@
+.links {
+  color: white;
+  text-decoration: none;
+}
+
+.selected {
+  color: red;
+}
+
+.linksselected {
+  color: hotpink;
+}
