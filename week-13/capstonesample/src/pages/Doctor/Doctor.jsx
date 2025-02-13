@@ -32,7 +32,9 @@ export default function Doctor() {
   // get scene
   useEffect(() => {
     const request = async () => {
-      const res = await axios.get("http://localhost:8080/api/v1/doctors");
+      const res = await axios.get(
+        import.meta.env.VITE_BASE_URL + "/api/v1/doctors"
+      );
       setDoctors(res.data.content);
       setUpdate(true);
     };
@@ -40,7 +42,7 @@ export default function Doctor() {
   }, [update]);
 
   const handleDoctorPost = async () => {
-    axios.post("http://localhost:8080/api/v1/doctors", newDoctor);
+    axios.post(import.meta.env.VITE_BASE_URL + "/api/v1/doctors", newDoctor);
     setUpdate(false);
     setNewDoctor(initialDoctor);
     handleAlert("Doctor Added");
@@ -56,7 +58,7 @@ export default function Doctor() {
 
   const handleDoctorDelete = async (id) => {
     const response = await axios.delete(
-      `http://localhost:8080/api/v1/doctors/${id}`
+      import.meta.env.VITE_BASE_URL + `/api/v1/doctors/${id}`
     );
     handleAlert(response.data);
     setUpdate(false);
@@ -69,7 +71,7 @@ export default function Doctor() {
 
   const handleUpdateDoctor = async () => {
     await axios.put(
-      `http://localhost:8080/api/v1/doctors/${updateDoctor.id}`,
+      `${import.meta.env.VITE_BASE_URL}/api/v1/doctors/${updateDoctor.id}`,
       updateDoctor
     );
     setUpdateDoctor(initialDoctor);

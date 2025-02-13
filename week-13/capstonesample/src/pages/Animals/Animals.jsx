@@ -37,12 +37,16 @@ function Animals() {
 
   useEffect(() => {
     const animalRequest = async () => {
-      const res = await axios.get("http://localhost:8080/api/v1/animals");
+      const res = await axios.get(
+        import.meta.env.VITE_BASE_URL + "/api/v1/animals"
+      );
       setAnimals(res.data.content);
       setUpdate(true);
     };
     const customerRequest = async () => {
-      const res = await axios.get("http://localhost:8080/api/v1/customers");
+      const res = await axios.get(
+        import.meta.env.VITE_BASE_URL + "/api/v1/customers"
+      );
       setCustomers(res.data.content);
     };
     animalRequest();
@@ -50,7 +54,7 @@ function Animals() {
   }, [update]);
 
   const handleAnimalPost = async () => {
-    axios.post("http://localhost:8080/api/v1/doctors", newAnimal);
+    axios.post(import.meta.env.VITE_BASE_URL + "/api/v1/doctors", newAnimal);
     setUpdate(false);
     setNewAnimal(initialAnimal);
     handleAlert("Doctor Added");
@@ -66,7 +70,7 @@ function Animals() {
 
   const handleDoctorDelete = async (id) => {
     const response = await axios.delete(
-      `http://localhost:8080/api/v1/doctors/${id}`
+      import.meta.env.VITE_BASE_URL + `/api/v1/doctors/${id}`
     );
     handleAlert(response.data);
     setUpdate(false);
@@ -79,7 +83,7 @@ function Animals() {
 
   const handleUpdateAnimal = async () => {
     await axios.put(
-      `http://localhost:8080/api/v1/doctors/${updateAnimal.id}`,
+      import.meta.env.VITE_BASE_URL + `/api/v1/doctors/${updateAnimal.id}`,
       updateAnimal
     );
     setUpdateAnimal(initialAnimal);

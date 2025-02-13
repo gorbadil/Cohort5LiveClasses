@@ -31,7 +31,9 @@ function Customer() {
 
   useEffect(() => {
     const request = async () => {
-      const res = await axios.get("http://localhost:8080/api/v1/customers");
+      const res = await axios.get(
+        import.meta.env.VITE_BASE_URL + "/api/v1/customers"
+      );
       setCustomer(res.data.content);
       setUpdate(true);
     };
@@ -47,7 +49,10 @@ function Customer() {
   };
 
   const handleCustomerPost = async () => {
-    await axios.post("http://localhost:8080/api/v1/customers", newCustomer);
+    await axios.post(
+      import.meta.env.VITE_BASE_URL + "/api/v1/customers",
+      newCustomer
+    );
     setUpdate(false);
     setNewCustomer(initialCustomer);
     handleAlert("Customer Added");
