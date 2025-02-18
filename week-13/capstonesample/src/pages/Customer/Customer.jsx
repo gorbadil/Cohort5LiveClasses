@@ -12,6 +12,8 @@ import TextField from "@mui/material/TextField";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import "./Customer.css";
+import InputHandler from "../../components/InputHandler/InputHandler";
+import TableHeader from "../../components/TableHeader/TableHeader";
 
 const initialCustomer = {
   name: "",
@@ -60,7 +62,7 @@ function Customer() {
 
   const handleCustomerDelete = async (id) => {
     const response = await axios.delete(
-      `http://localhost:8080/api/v1/customers/${id}`
+      import.meta.env.VITE_BASE_URL + `/api/v1/customers/${id}`
     );
     handleAlert(response.data);
     setUpdate(false);
@@ -73,7 +75,7 @@ function Customer() {
 
   const handleUpdateCustomer = async () => {
     await axios.put(
-      `http://localhost:8080/api/v1/doctors/${updateCustomer.id}`,
+      import.meta.env.VITE_BASE_URL + `/api/v1/customers/${updateCustomer.id}`,
       updateCustomer
     );
     setUpdateCustomer(initialCustomer);
@@ -87,7 +89,7 @@ function Customer() {
         New Doctor
       </Typography>
       <div className="newDoctor">
-        {Object.keys(initialCustomer).map((key) => (
+        {/* {Object.keys(initialCustomer).map((key) => (
           <TextField
             key={key}
             id="standard-basic"
@@ -98,9 +100,14 @@ function Customer() {
               setNewCustomer((prev) => ({ ...prev, [key]: e.target.value }))
             }
           />
-        ))}
+        ))} */}
+        <InputHandler
+          initial={initialCustomer}
+          inputState={newCustomer}
+          inputStateSetter={setNewCustomer}
+        />
         <Button variant="contained" onClick={handleCustomerPost}>
-          Add New Doctor
+          Add New Customer
         </Button>
       </div>
 
@@ -109,7 +116,7 @@ function Customer() {
       </Typography>
 
       <div className="newDoctor">
-        {Object.keys(initialCustomer).map((key) => (
+        {/* {Object.keys(initialCustomer).map((key) => (
           <TextField
             key={key}
             id="standard-basic"
@@ -120,7 +127,12 @@ function Customer() {
               setUpdateCustomer((prev) => ({ ...prev, [key]: e.target.value }))
             }
           />
-        ))}
+        ))} */}
+        <InputHandler
+          initial={initialCustomer}
+          inputState={updateCustomer}
+          inputStateSetter={setUpdateCustomer}
+        />
         <Button variant="contained" onClick={handleUpdateCustomer}>
           Update Customer
         </Button>
@@ -132,15 +144,7 @@ function Customer() {
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
-            <TableRow>
-              <TableCell>Name</TableCell>
-              <TableCell align="center">Phone</TableCell>
-              <TableCell align="center">E-mail</TableCell>
-              <TableCell align="center">Address</TableCell>
-              <TableCell align="center">City</TableCell>
-              <TableCell align="center">Delete</TableCell>
-              <TableCell align="center">Update</TableCell>
-            </TableRow>
+            <TableHeader initial={initialCustomer} />
           </TableHead>
           <TableBody>
             {customers?.map((doctor) => (

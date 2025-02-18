@@ -12,6 +12,8 @@ import TextField from "@mui/material/TextField";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import "./Doctor.css";
+import InputHandler from "../../components/InputHandler/InputHandler";
+import TableHeader from "../../components/TableHeader/TableHeader";
 
 const initialDoctor = {
   name: "",
@@ -19,6 +21,25 @@ const initialDoctor = {
   email: "",
   address: "",
   city: "",
+};
+
+const initialDoctorV2 = {
+  name: {
+    type: "text",
+    value: "",
+  },
+  phone: {
+    type: "text",
+    value: "",
+  },
+  dateOfBirth: {
+    type: "date",
+    value: "",
+  },
+  email: {
+    type: "email",
+    value: "",
+  },
 };
 
 export default function Doctor() {
@@ -85,7 +106,7 @@ export default function Doctor() {
         New Doctor
       </Typography>
       <div className="newDoctor">
-        {Object.keys(initialDoctor).map((key) => (
+        {/* {Object.keys(initialDoctor).map((key) => (
           <TextField
             key={key}
             id="standard-basic"
@@ -96,7 +117,12 @@ export default function Doctor() {
               setNewDoctor((prev) => ({ ...prev, [key]: e.target.value }))
             }
           />
-        ))}
+        ))} */}
+        <InputHandler
+          initial={initialDoctor}
+          inputState={newDoctor}
+          inputStateSetter={setNewDoctor}
+        />
         <Button variant="contained" onClick={handleDoctorPost}>
           Add New Doctor
         </Button>
@@ -107,7 +133,7 @@ export default function Doctor() {
       </Typography>
 
       <div className="newDoctor">
-        {Object.keys(initialDoctor).map((key) => (
+        {/* {Object.keys(initialDoctor).map((key) => (
           <TextField
             key={key}
             id="standard-basic"
@@ -118,7 +144,12 @@ export default function Doctor() {
               setUpdateDoctor((prev) => ({ ...prev, [key]: e.target.value }))
             }
           />
-        ))}
+        ))} */}
+        <InputHandler
+          initial={initialDoctor}
+          inputState={updateDoctor}
+          inputStateSetter={setUpdateDoctor}
+        />
         <Button variant="contained" onClick={handleUpdateDoctor}>
           Update Doctor
         </Button>
@@ -130,15 +161,7 @@ export default function Doctor() {
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
-            <TableRow>
-              <TableCell>Name</TableCell>
-              <TableCell align="center">Phone</TableCell>
-              <TableCell align="center">E-mail</TableCell>
-              <TableCell align="center">Address</TableCell>
-              <TableCell align="center">City</TableCell>
-              <TableCell align="center">Delete</TableCell>
-              <TableCell align="center">Update</TableCell>
-            </TableRow>
+            <TableHeader initial={initialDoctor} />
           </TableHead>
           <TableBody>
             {doctors?.map((doctor) => (
@@ -146,13 +169,16 @@ export default function Doctor() {
                 key={doctor.id}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
-                <TableCell component="th" scope="row">
+                {/* <TableCell component="th" scope="row">
                   {doctor.name}
                 </TableCell>
                 <TableCell align="center">{doctor.phone}</TableCell>
                 <TableCell align="center">{doctor.email}</TableCell>
                 <TableCell align="center">{doctor.address}</TableCell>
-                <TableCell align="center">{doctor.city}</TableCell>
+                <TableCell align="center">{doctor.city}</TableCell> */}
+                {Object.keys(doctor).map((key) => (
+                  <TableCell align="center">{doctor[key]}</TableCell>
+                ))}
                 <TableCell align="center">
                   <DeleteForeverIcon
                     onClick={() => handleDoctorDelete(doctor.id)}
